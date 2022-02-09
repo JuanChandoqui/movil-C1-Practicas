@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Login2Screen()
-      // home: ListaDatosScreen()
+      // home: Login2Screen()
+      home: ListaDatosScreen()
     );
   }
 }

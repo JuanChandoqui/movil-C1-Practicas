@@ -6,6 +6,7 @@ class Login2Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: Column(
           children: [
@@ -35,26 +36,15 @@ class Login2Screen extends StatelessWidget {
               child: SizedBox(
                 height: 80,
                 width: 400,
-                child: ListView(
+                child: ListView.separated(
+                  separatorBuilder: (context, index) => const SizedBox(width: 20),
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return  containerCircle();
+                  },
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                  ],
+                  
+                  
                 ),
               ),
             ),
@@ -96,7 +86,7 @@ class Login2Screen extends StatelessWidget {
               child: const Text('ACEPTAR', style: TextStyle(color: Colors.white),), 
               style: TextButton.styleFrom(
                 backgroundColor: Colors.blue,
-                fixedSize: Size(300, 50),
+                fixedSize: const Size(300, 50),
               )
             ),
             const SizedBox(height: 70,),
@@ -133,6 +123,19 @@ class Login2Screen extends StatelessWidget {
                       child: IconButton(
                         onPressed: () => {}, 
                         icon: const Icon(Icons.add_business_outlined)
+                      ),
+                    ),
+                  );
+  }
+
+  SizedBox containerCircle() {
+    return SizedBox(
+                    height: 70,
+                    width: 70,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.indigo
                       ),
                     ),
                   );

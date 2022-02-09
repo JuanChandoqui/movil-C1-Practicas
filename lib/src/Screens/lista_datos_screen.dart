@@ -7,6 +7,7 @@ class ListaDatosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    resizeToAvoidBottomInset: false,
     appBar: AppBar(
       title: const Text('LISTA DE DATOS'),
       centerTitle: true,
@@ -43,26 +44,11 @@ class ListaDatosScreen extends StatelessWidget {
               child: SizedBox(
                 height: 80,
                 width: 400,
-                child: ListView(
+                child: ListView.separated(                 
+                  separatorBuilder: (context, index) =>  const SizedBox(width: 30), 
+                  itemCount: 10,
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                    button_circle(),
-                    const SizedBox(width: 30),
-                  ],
+                  itemBuilder: (context, index) => button_circle(), 
                 ),
               ),
             ),
